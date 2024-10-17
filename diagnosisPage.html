@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinKare - Diagnosis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-900 bg-opacity-55 h-screen flex items-center justify-center">
+    <!-- Container for the main content -->
+    <div class="container mx-auto px-4 md:px-20 h-auto flex items-center justify-center">
+        <!-- Central white box with rounded corners -->
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-10 w-full max-w-4xl h-auto md:h-[80vh] flex flex-col justify-between overflow-hidden">
+            <!-- Header Section -->
+            <header class="mb-4 md:mb-6 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold text-black tracking-wide">
+                    Skin<span class="text-blue-900 italic">Kare</span>
+                </h1>
+                <p class="text-sm md:text-lg italic text-gray-600">with your AI physician</p>
+            </header>
+
+            <!-- Main content: Image and Diagnosis details side by side -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-center flex-grow overflow-hidden">
+                <!-- Left Section: Diagnosis Image and Summary -->
+                <div class="flex flex-col items-start">
+                    <div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <!-- Placeholder for the image -->
+                        <img src="images.jpg" alt="Diagnosis Image" class="object-contain h-full w-full rounded-lg">
+                    </div>
+                    <!-- Diagnosis summary -->
+                    <div class="w-full bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <h2 class="text-xl font-semibold text-gray-800">Diagnosis</h2>
+                        <p class="text-gray-600 mt-2 leading-relaxed">
+                            Eczema - A common skin condition causing inflammation and irritation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Section: Detailed Diagnosis and Audio Player -->
+                <div class="flex flex-col justify-between">
+                    <!-- Detailed Diagnosis -->
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Detailed Information</h2>
+                        <div class="overflow-y-auto max-h-[40vh]">
+                            <p class="text-gray-600 leading-relaxed">
+                                Eczema is a chronic skin condition characterized by dry, itchy, and inflamed skin. While it's common among children, it can affect individuals of any age. The exact cause of eczema is unknown, but it's thought to be linked to an overactive immune response to an irritant. Eczema isn't contagious, but it can be uncomfortable and may require various forms of treatment depending on the severity of the symptoms. Common symptoms include red, inflamed skin, intense itching, and thickened or scaly patches of skin. While there is no cure for eczema, it can often be managed with proper skin care and medications. Emollients, for example, are used to maintain skin hydration and prevent flare-ups, while topical corticosteroids may be used to control inflammation during acute flares. 
+                            
+                                In addition to medical treatments, individuals with eczema are advised to avoid known triggers, such as harsh soaps, synthetic fabrics, and extreme weather conditions. Stress can also exacerbate symptoms, making stress management techniques an important aspect of overall care. In more severe cases, systemic treatments may be necessary, including oral medications and phototherapy. Though eczema is primarily a physical condition, it can have a significant emotional and psychological impact due to the persistent discomfort and the visibility of the affected skin. 
+                            
+                                Recent advancements in eczema treatment focus on targeted therapies that address the immune system's role in the condition. Biologic drugs, for example, are designed to interrupt the inflammatory process that leads to eczema flares. These treatments are currently reserved for individuals with severe or treatment-resistant eczema but have shown promise in reducing the frequency and severity of flare-ups. 
+                            
+                                Long-term management of eczema requires a comprehensive approach that includes lifestyle modifications, consistent use of moisturizers, and avoidance of triggers. People with eczema are also encouraged to stay informed about the latest treatments and to work closely with healthcare providers to develop an individualized care plan. 
+                            
+                                Managing eczema is not just about treating the skin; it's about understanding the body's complex immune responses, identifying triggers, and maintaining overall well-being. Whether you're newly diagnosed or have been managing eczema for years, it's essential to take an active role in your care, seek support when needed, and explore new treatments as they become available. With proper care and management, individuals with eczema can lead fulfilling lives despite the challenges posed by this chronic condition.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Audio Player -->
+                    <div class="mt-4">
+                        <audio controls class="w-full bg-blue-900 p-3 rounded-full">
+                            <source src="wowowowowowowow-103214.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            
+            <a href="index.html" class="flex justify-end mt-6 text-blue-900 font-semibold hover:underline">Go back to home page</a>
+        </div>
+    </div>
+</body>
+</html>

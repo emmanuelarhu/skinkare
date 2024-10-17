@@ -1,0 +1,125 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Analysis Results</title>
+  </head>
+  <body>
+    <header>
+      <h1>Analysis Results</h1>
+    </header>
+    <div class="container">
+      <div id="result-container"></div>
+      <a href="/">Back to Upload</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinKare - Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 h-screen flex items-center justify-center">
+    <!-- <div class="bg-white p-8 rounded-lg shadow-lg w-3/4 max-w-2xl text-center">
+      <h1 class="text-3xl font-bold mb-4">Analysis Result</h1> -->
+      <div id="result-container"></div>
+      <!-- <a href="/">
+        <button class="mt-4 bg-blue-900 text-white py-2 px-4 rounded">Back to Home</button>
+      </a> -->
+    <!-- </div>  -->
+
+    <script>
+if (window.location.pathname.includes("results")) { // Check page URL
+    const resultContainer = document.getElementById("result-container");
+    console.log("Result container:", resultContainer); // Debugging
+
+    const analysisResult = JSON.parse(localStorage.getItem("analysisResult"));
+    console.log("Analysis Result from localStorage:", analysisResult); // Debugging
+
+    if (analysisResult) {
+        const { condition, analysis, imageBase64 } = analysisResult;
+
+        // const resultHTML = `
+        //     <h2 >Condition: ${condition}</h2>
+        //     <p>Analysis: ${analysis}</p>
+        //     <img src="${imageBase64}" alt="Analyzed Image">
+        // `;
+
+        const resultHTML = `
+                  <!-- Container for the main content -->
+    <div class="container mx-auto px-4 md:px-20 h-auto flex items-center justify-center">
+        <!-- Central white box with rounded corners -->
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-10 w-full max-w-4xl h-auto md:h-[80vh] flex flex-col justify-between">
+            <!-- Header Section -->
+            <header class="mb-4 md:mb-6 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold text-black tracking-wide">
+                    Skin<span class="text-blue-900 italic">Kare</span>
+                </h1>
+                <p class="text-sm md:text-lg italic text-gray-600">with your AI physician</p>
+            </header>
+
+            <!-- Main content: Image and Diagnosis details side by side -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-center flex-grow">
+                <!-- Left Section: Diagnosis Image and Summary -->
+                <div class="flex flex-col items-start">
+                    <div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <!-- Placeholder for the image -->
+                        
+                        <img src="${imageBase64}" alt="Analyzed Image" class="object-contain h-full w-full rounded-lg">
+                    </div>
+                    <!-- Diagnosis summary -->
+                    <div class="w-full bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <h2 class="text-xl font-semibold text-gray-800">Diagnosis</h2>
+                        <p class="text-gray-600 mt-2">Eczema - A common skin condition causing inflammation and irritation.</p>
+                    </div>
+                </div>
+
+                <!-- Right Section: Detailed Diagnosis and Audio Player -->
+                <div class="flex flex-col justify-between">
+                    <!-- Detailed Diagnosis -->
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Detailed Information</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                           Analysis: ${analysis}
+                        </p>
+                    </div>
+
+                    <!-- Audio Player -->
+                    <div class="mt-4">
+                        <audio controls class="w-full bg-blue-900 p-3 rounded-full">
+                            <source src="wowowowowowowow-103214.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            
+            <a  href="index.html" class="flex justify-end mt-2 text-blue-900 font-semibold hover:underline">Go back to home page</a>
+        </div>
+    </div>
+
+        
+        `;
+
+
+
+
+        resultContainer.innerHTML = resultHTML;
+    } else {
+        resultContainer.innerHTML = `<p>No analysis result found.</p>`;
+    }
+} 
+   </script>
+  </body>
+</html>
